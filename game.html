@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dodge Ball Game</title>
+    <style>
+        /* Full page background with your existing image */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Overlay to improve readability and add depth */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+            z-index: 1;
+        }
+
+        /* Container for game and info */
+        .game-container {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Game info sidebar */
+        .game-info {
+            width: 250px;
+            padding: 0 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .game-info h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .game-info .instructions {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Canvas styling */
+        canvas {
+            background: rgba(135, 206, 235, 0.7); /* Semi-transparent sky blue */
+            border: 5px solid white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .game-container {
+                flex-direction: column;
+            }
+
+            .game-info {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Info Sidebar -->
+        <div class="game-info">
+            <h1>Dodge Ball</h1>
+            
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <p>Use arrow keys to move</p>
+                <p>Avoid falling red balls</p>
+                <p>Survive as long as you can!</p>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="game" width="800" height="600"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
